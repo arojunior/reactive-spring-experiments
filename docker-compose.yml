@@ -11,3 +11,10 @@ services:
         ports:
             - 27017:27017
         command: mongod --smallfiles --logpath=/dev/null # --quiet
+    java:
+        build:
+          context: .
+        depends_on:
+            - mongodb
+        ports:
+          - 8080:8080
